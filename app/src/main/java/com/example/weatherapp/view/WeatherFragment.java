@@ -1,10 +1,13 @@
 package com.example.weatherapp.view;
 
 
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Icon;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -14,8 +17,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.weatherapp.R;
 import com.example.weatherapp.adapter.HourlyAdapter;
 import com.example.weatherapp.model.DataItem;
@@ -38,6 +43,7 @@ import java.util.Objects;
 public class WeatherFragment extends Fragment {
 
     private WeatherViewModel weatherViewModel;
+    private ImageView ivIcon;
     private MaterialTextView tvStatus;
     private MaterialTextView tvTemperature;
     private MaterialTextView tvTempHigh;
@@ -45,7 +51,6 @@ public class WeatherFragment extends Fragment {
     private RecyclerView rvHourly;
     private HourlyAdapter adapter;
     private List<DataItem> hourlyData;
-
 
     public WeatherFragment() {
         // Required empty public constructor
@@ -65,6 +70,7 @@ public class WeatherFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        ivIcon = view.findViewById(R.id.ivIcon);
         tvStatus = view.findViewById(R.id.tvStatus);
         tvTemperature = view.findViewById(R.id.tvTemperature);
         tvTempHigh = view.findViewById(R.id.tvTempHigh);
@@ -91,17 +97,20 @@ public class WeatherFragment extends Fragment {
             @Override
             public void onChanged(WeatherResponse weatherResponse) {
                 if (weatherResponse != null) {
+                    getDrawableResource(weatherResponse.getCurrently().getIcon());
+
                     tvStatus.setText(String.format(Locale.getDefault(), "%s",
                             weatherResponse.getCurrently().getSummary()));
                     tvTemperature.setText(String.format(Locale.getDefault(), "%.0f°",
                             weatherResponse.getCurrently().getTemperature()));
                     tvTempHigh.setText(String.format(Locale.getDefault(), "%.0f°",
                             weatherResponse.getDaily().getData().get(0).getTemperatureHigh()));
-                    tvTempLow.setText(String.format(Locale.getDefault(),"%.0f°",
+                    tvTempLow.setText(String.format(Locale.getDefault(), "%.0f°",
                             weatherResponse.getDaily().getData().get(0).getTemperatureLow()));
 
                     hourlyData = weatherResponse.getHourly().getData();
                     adapter.setHourly(hourlyData);
+
                 }
             }
         });
@@ -116,4 +125,40 @@ public class WeatherFragment extends Fragment {
         });
     }
 
+    private void getDrawableResource(String resName) {
+        switch (resName) {
+            case "clear-day":
+                ivIcon.setImageResource(R.drawable.clear_day);
+                break;
+            case "clear-night":
+                ivIcon.setImageResource(R.drawable.clear_night);
+                break;
+            case "partly-cloudy-day":
+                ivIcon.setImageResource(R.drawable.partly_cloudy_day);
+                break;
+            case "partly-cloudy-night":
+                ivIcon.setImageResource(R.drawable.partly_cloudy_night);
+                break;
+            case "rain":
+                ivIcon.setImageResource(R.drawable.rain);
+                break;
+            case "sleet":
+                ivIcon.setImageResource(R.drawable.sleet);
+                break;
+            case "snow":
+                ivIcon.setImageResource(R.drawable.snow);
+                break;
+            case "wind":
+                ivIcon.setImageResource(R.drawable.wind);
+                break;
+            case "cloudy":
+                ivIcon.setImageResource(R.drawable.cloudy);
+                break;
+            case "fog":
+                ivIcon.setImageResource(R.drawable.fog);
+                break;
+            default:
+                ivIcon.setImageResource(R.drawable.ic_launcher_background);
+        }
+    }
 }

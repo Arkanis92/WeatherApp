@@ -2,10 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/light_blue"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:layout_marginEnd="50dp">
+    android:layout_marginEnd="20dp">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvHourlyTime"
@@ -19,6 +18,16 @@
         app:layout_constraintTop_toTopOf="parent"
         android:textColor="@color/white"
         tools:text="5:30 PM" />
+
+    <ImageView
+        android:id="@+id/ivIconRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHourlyTime"
+        app:layout_constraintBottom_toTopOf="@id/tvHourlyTemp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/cloudy" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvHourlyTemp"

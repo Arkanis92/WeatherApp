@@ -27,7 +27,8 @@ public class Repository {
         return retrofit.create(WeatherService.class)
                 .getWeatherList(
                         37.8267,
-                        -122.4233
+                        -122.4233,
+                        "minutely,flags"
                 );
     }
 }

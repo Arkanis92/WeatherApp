@@ -24,6 +24,17 @@ public class DataItem {
     @SerializedName("temperature")
     private double temperature;
 
+    @SerializedName("icon")
+    private String icon;
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
     public double getTemperature() {
         return temperature;
     }
