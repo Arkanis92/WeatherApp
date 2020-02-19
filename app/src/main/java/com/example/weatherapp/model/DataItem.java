@@ -4,72 +4,105 @@ package com.example.weatherapp.model;
 import com.google.gson.annotations.SerializedName;
 
 
-public class DataItem{
+public class DataItem {
 
-	@SerializedName("precipProbability")
-	private int precipProbability;
+    @SerializedName("precipProbability")
+    private double precipProbability;
 
-	@SerializedName("precipIntensity")
-	private int precipIntensity;
+    @SerializedName("precipIntensity")
+    private double precipIntensity;
 
-	@SerializedName("time")
-	private int time;
+    @SerializedName("time")
+    private int time;
 
-	@SerializedName("precipIntensityError")
-	private double precipIntensityError;
+    @SerializedName("precipIntensityError")
+    private double precipIntensityError;
 
-	@SerializedName("precipType")
-	private String precipType;
+    @SerializedName("precipType")
+    private String precipType;
 
-	public void setPrecipProbability(int precipProbability){
-		this.precipProbability = precipProbability;
-	}
+    @SerializedName("temperature")
+    private double temperature;
 
-	public int getPrecipProbability(){
-		return precipProbability;
-	}
+    public double getTemperature() {
+        return temperature;
+    }
 
-	public void setPrecipIntensity(int precipIntensity){
-		this.precipIntensity = precipIntensity;
-	}
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
+    }
 
-	public int getPrecipIntensity(){
-		return precipIntensity;
-	}
+    @SerializedName("temperatureHigh")
+    private double temperatureHigh;
 
-	public void setTime(int time){
-		this.time = time;
-	}
+    @SerializedName("temperatureLow")
+    private double temperatureLow;
 
-	public int getTime(){
-		return time;
-	}
+    public double getTemperatureLow() {
+        return temperatureLow;
+    }
 
-	public void setPrecipIntensityError(double precipIntensityError){
-		this.precipIntensityError = precipIntensityError;
-	}
+    public void setTemperatureLow(double temperatureLow) {
+        this.temperatureLow = temperatureLow;
+    }
 
-	public double getPrecipIntensityError(){
-		return precipIntensityError;
-	}
+    public double getTemperatureHigh() {
+        return temperatureHigh;
+    }
 
-	public void setPrecipType(String precipType){
-		this.precipType = precipType;
-	}
+    public void setTemperatureHigh(double temperatureHigh) {
+        this.temperatureHigh = temperatureHigh;
+    }
 
-	public String getPrecipType(){
-		return precipType;
-	}
+    public void setPrecipProbability(double precipProbability) {
+        this.precipProbability = precipProbability;
+    }
 
-	@Override
- 	public String toString(){
-		return 
-			"DataItem{" + 
-			"precipProbability = '" + precipProbability + '\'' + 
-			",precipIntensity = '" + precipIntensity + '\'' + 
-			",time = '" + time + '\'' + 
-			",precipIntensityError = '" + precipIntensityError + '\'' + 
-			",precipType = '" + precipType + '\'' + 
-			"}";
-		}
+    public double getPrecipProbability() {
+        return precipProbability;
+    }
+
+    public void setPrecipIntensity(double precipIntensity) {
+        this.precipIntensity = precipIntensity;
+    }
+
+    public double getPrecipIntensity() {
+        return precipIntensity;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    public void setPrecipIntensityError(double precipIntensityError) {
+        this.precipIntensityError = precipIntensityError;
+    }
+
+    public double getPrecipIntensityError() {
+        return precipIntensityError;
+    }
+
+    public void setPrecipType(String precipType) {
+        this.precipType = precipType;
+    }
+
+    public String getPrecipType() {
+        return precipType;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "DataItem{" +
+                        "precipProbability = '" + precipProbability + '\'' +
+                        ",precipIntensity = '" + precipIntensity + '\'' +
+                        ",time = '" + time + '\'' +
+                        ",precipIntensityError = '" + precipIntensityError + '\'' +
+                        ",precipType = '" + precipType + '\'' +
+                        "}";
+    }
 }

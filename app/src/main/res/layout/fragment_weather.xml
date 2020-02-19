@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvTemperature"
         tools:text="60°" />
 
-    <View
+    <ImageView
         android:id="@+id/viewLine"
         android:layout_width="0dp"
         android:layout_height="2dp"
@@ -80,11 +80,11 @@
         tools:text="40°" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvHourlyTemp"
+        android:id="@+id/rvHourly"
         android:layout_width="0dp"
         android:layout_height="200dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="20dp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

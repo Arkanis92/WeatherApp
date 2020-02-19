@@ -10,16 +10,19 @@ public class Currently{
 	private String summary;
 
 	@SerializedName("precipProbability")
-	private int precipProbability;
+	private double precipProbability;
 
 	@SerializedName("visibility")
 	private int visibility;
 
 	@SerializedName("windGust")
-	private int windGust;
+	private double windGust;
 
 	@SerializedName("precipIntensity")
-	private int precipIntensity;
+	private double precipIntensity;
+
+	@SerializedName("precipIntensityError")
+	private double precipIntensityError;
 
 	@SerializedName("icon")
 	private String icon;
@@ -42,11 +45,11 @@ public class Currently{
 	@SerializedName("ozone")
 	private double ozone;
 
-	@SerializedName("nearestStormBearing")
-	private int nearestStormBearing;
-
 	@SerializedName("nearestStormDistance")
 	private int nearestStormDistance;
+
+	@SerializedName("precipType")
+	private String precipType;
 
 	@SerializedName("temperature")
 	private double temperature;
@@ -71,11 +74,11 @@ public class Currently{
 		return summary;
 	}
 
-	public void setPrecipProbability(int precipProbability){
+	public void setPrecipProbability(double precipProbability){
 		this.precipProbability = precipProbability;
 	}
 
-	public int getPrecipProbability(){
+	public double getPrecipProbability(){
 		return precipProbability;
 	}
 
@@ -87,20 +90,28 @@ public class Currently{
 		return visibility;
 	}
 
-	public void setWindGust(int windGust){
+	public void setWindGust(double windGust){
 		this.windGust = windGust;
 	}
 
-	public int getWindGust(){
+	public double getWindGust(){
 		return windGust;
 	}
 
-	public void setPrecipIntensity(int precipIntensity){
+	public void setPrecipIntensity(double precipIntensity){
 		this.precipIntensity = precipIntensity;
 	}
 
-	public int getPrecipIntensity(){
+	public double getPrecipIntensity(){
 		return precipIntensity;
+	}
+
+	public void setPrecipIntensityError(double precipIntensityError){
+		this.precipIntensityError = precipIntensityError;
+	}
+
+	public double getPrecipIntensityError(){
+		return precipIntensityError;
 	}
 
 	public void setIcon(String icon){
@@ -159,20 +170,20 @@ public class Currently{
 		return ozone;
 	}
 
-	public void setNearestStormBearing(int nearestStormBearing){
-		this.nearestStormBearing = nearestStormBearing;
-	}
-
-	public int getNearestStormBearing(){
-		return nearestStormBearing;
-	}
-
 	public void setNearestStormDistance(int nearestStormDistance){
 		this.nearestStormDistance = nearestStormDistance;
 	}
 
 	public int getNearestStormDistance(){
 		return nearestStormDistance;
+	}
+
+	public void setPrecipType(String precipType){
+		this.precipType = precipType;
+	}
+
+	public String getPrecipType(){
+		return precipType;
 	}
 
 	public void setTemperature(double temperature){
@@ -224,6 +235,7 @@ public class Currently{
 			",visibility = '" + visibility + '\'' + 
 			",windGust = '" + windGust + '\'' + 
 			",precipIntensity = '" + precipIntensity + '\'' + 
+			",precipIntensityError = '" + precipIntensityError + '\'' + 
 			",icon = '" + icon + '\'' + 
 			",cloudCover = '" + cloudCover + '\'' + 
 			",windBearing = '" + windBearing + '\'' + 
@@ -231,8 +243,8 @@ public class Currently{
 			",pressure = '" + pressure + '\'' + 
 			",dewPoint = '" + dewPoint + '\'' + 
 			",ozone = '" + ozone + '\'' + 
-			",nearestStormBearing = '" + nearestStormBearing + '\'' + 
 			",nearestStormDistance = '" + nearestStormDistance + '\'' + 
+			",precipType = '" + precipType + '\'' + 
 			",temperature = '" + temperature + '\'' + 
 			",humidity = '" + humidity + '\'' + 
 			",time = '" + time + '\'' + 
