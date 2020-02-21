@@ -31,6 +31,12 @@ public class DataItem {
         return icon;
     }
 
+    @SerializedName("temperatureHigh")
+    private double temperatureHigh;
+
+    @SerializedName("temperatureLow")
+    private double temperatureLow;
+
     public void setIcon(String icon) {
         this.icon = icon;
     }
@@ -42,12 +48,6 @@ public class DataItem {
     public void setTemperature(double temperature) {
         this.temperature = temperature;
     }
-
-    @SerializedName("temperatureHigh")
-    private double temperatureHigh;
-
-    @SerializedName("temperatureLow")
-    private double temperatureLow;
 
     public double getTemperatureLow() {
         return temperatureLow;

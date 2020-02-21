@@ -72,7 +72,7 @@ public class WeatherFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        clMain = Objects.requireNonNull(getActivity()).findViewById(R.id.clMain);
+//        clMain = Objects.requireNonNull(getActivity()).findViewById(R.id.clMain);
         ivIcon = view.findViewById(R.id.ivIcon);
         tvStatus = view.findViewById(R.id.tvStatus);
         tvTemperature = view.findViewById(R.id.tvTemperature);
@@ -113,7 +113,6 @@ public class WeatherFragment extends Fragment {
 
                     hourlyData = weatherResponse.getHourly().getData();
                     adapter.setHourly(hourlyData);
-
                 }
             }
         });
@@ -132,47 +131,47 @@ public class WeatherFragment extends Fragment {
         switch (resName) {
             case "clear-day":
                 ivIcon.setImageResource(R.drawable.clear_day);
-                clMain.setBackgroundResource(R.drawable.clear_day_background);
+//                clMain.setBackgroundResource(R.drawable.clear_day_background);
                 break;
             case "clear-night":
                 ivIcon.setImageResource(R.drawable.clear_night);
-                clMain.setBackgroundResource(R.drawable.clear_night_background);
+//                clMain.setBackgroundResource(R.drawable.clear_night_background);
                 break;
             case "partly-cloudy-day":
                 ivIcon.setImageResource(R.drawable.partly_cloudy_day);
-                clMain.setBackgroundResource(R.drawable.cloudy_day_background);
+//                clMain.setBackgroundResource(R.drawable.cloudy_day_background);
                 break;
             case "partly-cloudy-night":
                 ivIcon.setImageResource(R.drawable.partly_cloudy_night);
-                clMain.setBackgroundResource(R.drawable.cloudy_night_background);
+//                clMain.setBackgroundResource(R.drawable.cloudy_night_background);
                 break;
             case "rain":
                 ivIcon.setImageResource(R.drawable.rain);
-                clMain.setBackgroundResource(R.drawable.rain_background);
+//                clMain.setBackgroundResource(R.drawable.rain_background);
                 break;
             case "sleet":
                 ivIcon.setImageResource(R.drawable.sleet);
-                clMain.setBackgroundResource(R.drawable.sleet_background);
+//                clMain.setBackgroundResource(R.drawable.sleet_background);
                 break;
             case "snow":
                 ivIcon.setImageResource(R.drawable.snow);
-                clMain.setBackgroundResource(R.drawable.snow_background);
+//                clMain.setBackgroundResource(R.drawable.snow_background);
                 break;
             case "wind":
                 ivIcon.setImageResource(R.drawable.wind);
-                clMain.setBackgroundResource(R.drawable.wind_background);
+//                clMain.setBackgroundResource(R.drawable.wind_background);
                 break;
             case "cloudy":
                 ivIcon.setImageResource(R.drawable.cloudy);
-                clMain.setBackgroundResource(R.drawable.cloudy_background);
+//                clMain.setBackgroundResource(R.drawable.cloudy_background);
                 break;
             case "fog":
                 ivIcon.setImageResource(R.drawable.fog);
-                clMain.setBackgroundResource(R.drawable.fog_background);
+//                clMain.setBackgroundResource(R.drawable.fog_background);
                 break;
             default:
                 ivIcon.setImageResource(R.drawable.ic_launcher_background);
-                clMain.setBackgroundResource(R.drawable.gradient);
+//                clMain.setBackgroundResource(R.drawable.gradient);
         }
     }
 }

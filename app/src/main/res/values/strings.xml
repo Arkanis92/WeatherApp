@@ -3,4 +3,13 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mon_8_24_am">Mon, 8:24 am</string>
+    <string name="amsterdam">Amsterdam</string>
+    <string name="user_name">User Name</string>
+    <string name="username_android_com">username@android.com</string>
+    <string name="weather">Weather</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
+    <string name="share">Share</string>
+    <string name="communication">Communication</string>
 </resources>

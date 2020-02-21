@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/groupPrimary">
+        <item
+            android:id="@+id/weatherFragment"
+            android:icon="@drawable/clear_day"
+            android:title="@string/weather" />
+        <item
+            android:id="@+id/homeFragment"
+            android:icon="@drawable/snow"
+            android:title="@string/home" />
+    </group>
+
+    <item android:title="@string/communication">
+        <menu>
+            <item
+                android:id="@+id/navShare"
+                android:icon="@drawable/cloudy"
+                android:title="@string/share" />
+        </menu>
+    </item>
+
+
+</menu>
