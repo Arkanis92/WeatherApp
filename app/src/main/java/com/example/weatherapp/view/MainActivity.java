@@ -2,6 +2,7 @@ package com.example.weatherapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.ViewCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
@@ -14,12 +15,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.weatherapp.R;
+import com.example.weatherapp.util.Utils;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private AppBarConfiguration appBarConfiguration;
+    private ConstraintLayout fragmentContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.drawerMain);
         navigationView = findViewById(R.id.nvMainView);
+        fragmentContainer = findViewById(R.id.fragmentContainer);
 
         Toolbar toolbar = findViewById(R.id.toolbarMain);
         setSupportActionBar(toolbar);
@@ -38,6 +42,15 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
+
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        ViewCompat.setOnApplyWindowInsetsListener(drawerLayout, (v, insets) -> {
+//            Utils.setMargins(fragmentContainer, 0, 0, 0, Utils.getNavigationBarHeight(this) + 70);
+//            return insets.consumeSystemWindowInsets();
+//        });
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
